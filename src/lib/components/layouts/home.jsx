@@ -8,6 +8,7 @@ import { useStore } from "../../store/store";
 import { useEffect } from "react";
 import { getGames } from "../../api/games";
 import { useQuery } from "@tanstack/react-query";
+import { Button } from "antd";
 
 const Home = () => {
   const { data: games, isLoading } = useQuery({
@@ -32,9 +33,11 @@ const Home = () => {
         className=" w-full h-screen"
       >
         {games?.map((game) => (
-          <SwiperSlide>
+          <SwiperSlide className="relative!">
 
-            <img src={game.imgbg} alt="" />
+            <img src={game.imgbg} alt=""  className="w-full h-full"/>
+            <p className=" absolute top-140 right-20 bg-white text-[10px] p-1 rounded-[5px]">{game.platform}</p>
+           <Button type="primary" className=" absolute! top-150! right-20! text-xl! w-25! h-10!">$ {game.price}</Button>
           </SwiperSlide>
         ))}
       </Swiper>
