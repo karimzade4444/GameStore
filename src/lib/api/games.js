@@ -7,10 +7,10 @@ export const getGames = async () => {
   return res.data;
 };
 
-export const deleteUser = async (id) => {
+export const deleteGames = async (id) => {
   return await axios.delete(`${api}/${id}`);
 };
 
-export const createUser = async (user) => {
+export const createGames = async (user) => {
   return await axios.post(api, user);
 };
