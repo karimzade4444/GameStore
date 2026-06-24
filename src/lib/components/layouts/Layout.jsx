@@ -13,7 +13,11 @@ const Layout = () => {
         <Link to="/">Игры</Link>
         <Link to="/">О нас</Link>
       </div>
-      
+      <div>
+        <p>Karimzoda</p>
+        <img src={logo} alt="" />
+        
+      </div>
     </div>
   );
 }
