@@ -1,21 +1,19 @@
-
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useStore } from "../../store/store";
 import { useEffect } from "react";
 import { getGames } from "../../api/games";
+import { useQuery } from "@tanstack/react-query";
 
 const Home = () => {
-const {games, setGames} = useStore();
-useEffect(()=>{
-    const reGames = getGames
-})
+  const { data: games, isLoading } = useQuery({
+    queryKey: ["games"],
+    queryFn: getGames,
+  });
 
   return (
     <>
@@ -31,11 +29,14 @@ useEffect(()=>{
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-       className=" w-full h-screen"
-    
+        className=" w-full h-screen"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
+        {games?.map((game) => (
+          <SwiperSlide>
+
+            <img src={game.imgbg} alt="" />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
