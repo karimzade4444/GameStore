@@ -1,8 +1,10 @@
-
+import logo from "../../../assets/magmus.png"
 
 const Layout = () => {
   return (
-    <div></div>
+    <div className="w-full">
+        <div><img src={logo} alt="" className="w-15 rounded-3xl" /></div>
+    </div>
   )
 }
 
