@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router";
-import logo from "../../../assets/magmus.png"
-import {  ShoppingTwoTone } from "@ant-design/icons";
+import logo from "../../../assets/magmus.png";
+import { ShoppingTwoTone } from "@ant-design/icons";
 import { Input } from "antd";
 
 const Layout = () => {
@@ -28,12 +28,20 @@ const Layout = () => {
             className="w-10 rounded-4xl cursor-pointer shadow-[0_10px_30px_black]"
           />
           <ShoppingTwoTone className="cursor-pointer" />
-          <Input placeholder="Поиск..." variant="filled" className="border-2! border-black!" />
+          <Input
+            placeholder="Поиск..."
+            variant="filled"
+            className="border-2! border-black!"
+          />
         </div>
       </div>
-      <Outlet/>
+      <Outlet />
+      <div className=" w-full h-40 bg-neutral-300">
+        <img src={logo} alt="" className="w-15" />
+        <div>Помощь</div>
+      </div>
     </>
   );
-}
+};
 
-export default Layout
+export default Layout;
