@@ -6,7 +6,7 @@ import { Input } from "antd";
 const Layout = () => {
   return (
     <>
-      <div className="w-full h-18 bg-neutral-300 flex justify-between items-center p-5 border-2 border-black">
+      <div className="w-full h-18 bg-neutral-300 flex justify-between items-center p-5 border-2 border-black fixed top-0 z-10">
         <div className=" flex justify-center items-center gap-5">
           <img
             src={logo}
