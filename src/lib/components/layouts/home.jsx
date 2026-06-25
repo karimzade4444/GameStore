@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { getGames } from "../../api/games";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "antd";
+import Categories from "./categories";
 
 const Home = () => {
   const { data: games, isLoading } = useQuery({
@@ -57,7 +58,7 @@ const Home = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div></div>
+      <Categories/>
     </>
   );
 };
