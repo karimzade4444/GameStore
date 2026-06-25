@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router"
 import Layout from "./lib/components/layouts/Layout"
 import Home from "./lib/components/layouts/Home"
 import Games from "./lib/components/Games"
+import About from "./lib/components/About"
 
 
 const App = () => {
@@ -17,6 +18,10 @@ const App = () => {
   {
     path:"/games",
     element:<Games/>
+  },
+  {
+    path:"/about",
+    element:<About/>
   }
   ]
 
