@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getGames } from "../api/games";
 import { Button } from "antd";
+import { Link } from "react-router";
 
 
 const Games = () => {
@@ -16,18 +17,27 @@ const Games = () => {
           <p></p>
         ) : (
           games?.map((el) => (
-            <div key={el.id} className="w-60 h-90 rounded-2xl bg-white/20 cursor-pointer">
-              <img src={el.img} alt="" className="w-full h-[70%] rounded-2xl" />
-              <p className="text-white pl-3 pt-2">{el.name}</p>
-              <div className="flex justify-between items-center pl-4 pr-4">
-                <p className="text-white/50 ">{el.tags}</p>
-                <p className="text-white/50">{el.platform}</p>
+            <Link key={el.id} to={`product/${el.id}`}>
+              <div
+                key={el.id}
+                className="w-60 h-90 rounded-2xl bg-white/20 cursor-pointer"
+              >
+                <img
+                  src={el.img}
+                  alt=""
+                  className="w-full h-[70%] rounded-2xl"
+                />
+                <p className="text-white pl-3 pt-2">{el.name}</p>
+                <div className="flex justify-between items-center pl-4 pr-4">
+                  <p className="text-white/50 ">{el.tags}</p>
+                  <p className="text-white/50">{el.platform}</p>
+                </div>
+                <div className="flex justify-between items-center p-3">
+                  <p className="text-blue-400 ">{el.developer}</p>
+                  <Button type="primary">Buy ${el.price}</Button>
+                </div>
               </div>
-              <div className="flex justify-between items-center p-3">
-                <p className="text-blue-400 ">{el.developer}</p>
-                <Button type="primary">Buy ${el.price}</Button>
-              </div>
-            </div>
+            </Link>
           ))
         )}
       </div>
