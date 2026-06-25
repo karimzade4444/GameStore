@@ -6,21 +6,30 @@ import { Input } from "antd";
 const Layout = () => {
   return (
     <>
-      <div className="w-full h-18 bg-neutral-300 flex justify-between items-center p-5 border-2 border-black fixed top-0 z-10">
+      <div className="w-full h-15 bg-blue-950/90 flex justify-between items-center p-5 border-2 border-black fixed top-0 z-10">
         <div className=" flex justify-center items-center gap-5">
           <img
             src={logo}
             alt=""
-            className="w-15 rounded-2xl shadow-[0_10px_30px_black]"
+            className="w-10 rounded-2xl shadow-[0_10px_30px_black]"
           />
-          <p className=" text-xl font-medium ">MagMus® Store</p>
+          <p className=" text-xl font-medium text-white ">MagMus® Store</p>
         </div>
-        <div className="flex justify-center items-center gap-10 font-normal text-xl">
-          <Link to="/">Главная</Link>
-          <Link to="/">Игры</Link>
-          <Link to="/">О нас</Link>
+        <div className="flex justify-center items-center gap-10 font-light text-white/70 ">
+          <Link to="/" className="hover:text-white">
+            Home
+          </Link>
+          <Link to="/" className="hover:text-white">
+            Games
+          </Link>
+          <Link to="/" className="hover:text-white">
+            News
+          </Link>
+          <Link to="/" className="hover:text-white">
+            About us
+          </Link>
         </div>
-        <div className=" flex justify-center items-center gap-5 text-xl font-light">
+        <div className=" flex justify-center items-center gap-5 text-xl font-light text-white">
           <p>Karimzoda</p>
           <img
             src={logo}
@@ -28,11 +37,7 @@ const Layout = () => {
             className="w-10 rounded-4xl cursor-pointer shadow-[0_10px_30px_black]"
           />
           <ShoppingTwoTone className="cursor-pointer" />
-          <Input
-            placeholder="Поиск..."
-            variant="filled"
-            className="border-2! border-black!"
-          />
+          <Input placeholder="Поиск..." className="border-2! border-black! " />
         </div>
       </div>
       <Outlet />
