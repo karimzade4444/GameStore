@@ -19,7 +19,7 @@ const Games = () => {
         ) : (
           games?.map((el) => (
             <div key={el.id} className="w-60 h-90 rounded-2xl bg-white/20 ">
-              <Link key={el.id} to={`product/${el.id}`}>
+              <Link key={el.id} to={`/prod/${el.id}`}>
                 <img
                   src={el.img}
                   alt=""
