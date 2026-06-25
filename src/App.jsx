@@ -3,6 +3,7 @@ import Layout from "./lib/components/layouts/Layout"
 import Home from "./lib/components/layouts/Home"
 import Games from "./lib/components/Games"
 import About from "./lib/components/About"
+import ProdByID from "./lib/components/prodByID"
 
 
 const App = () => {
@@ -22,6 +23,10 @@ const App = () => {
   {
     path:"/about",
     element:<About/>
+  },
+  {
+    path:"/prod/:id",
+    element:<ProdByID/>
   }
   ]
 
