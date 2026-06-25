@@ -22,9 +22,6 @@ const Layout = () => {
           <Link to="/games" className="hover:text-white">
             Games
           </Link>
-          <Link to="/" className="hover:text-white">
-            News
-          </Link>
           <Link to="/about" className="hover:text-white">
             About us
           </Link>

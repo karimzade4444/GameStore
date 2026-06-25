@@ -53,9 +53,19 @@ const AboutDown = () => {
         </div>
       </div>
 
-      <div>
-
-        <div className="w-100 h-70 bg-linear-to-b"></div>
+      <div className="mt-30 grid grid-cols-3 place-items-center">
+        <div className="w-80 h-40 bg-linear-to-b from-neutral-500/50 to-blue-900/20 rounded-2xl shadow-white/10 shadow-2xl flex justify-center items-center flex-col">
+          <p className=" text-4xl font-bold text-blue-400">100+</p>
+          <p className=" text-xl text-white/50">Game Library</p>
+        </div>
+        <div className="w-80 h-40 bg-linear-to-b from-neutral-500/50 to-blue-900/20 rounded-2xl shadow-white/10 shadow-2xl flex justify-center items-center flex-col">
+          <p className=" text-4xl font-bold text-blue-400">5+</p>
+          <p className=" text-xl text-white/50">Satisfied Gamers</p>
+        </div>
+        <div className="w-80 h-40 bg-linear-to-b from-neutral-500/50 to-blue-900/20 rounded-2xl shadow-white/10 shadow-2xl flex justify-center items-center flex-col">
+          <p className=" text-4xl font-bold text-blue-400">10+</p>
+          <p className=" text-xl text-white/50">Purchases</p>
+        </div>
       </div>
     </div>
   );
