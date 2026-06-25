@@ -7,6 +7,11 @@ export const getGames = async () => {
   return res.data;
 };
 
+export const getGamesByID = async (id)=>{
+  const res =await axios.get(`${api}/${id}`);
+  return res.data;
+}
+
 export const deleteGames = async (id) => {
   return await axios.delete(`${api}/${id}`);
 };
