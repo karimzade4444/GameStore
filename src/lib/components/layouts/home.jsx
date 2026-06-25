@@ -34,16 +34,24 @@ const Home = () => {
       >
         {games?.map((game) => (
           <SwiperSlide className="relative!">
-
-            <img src={game.imgbg} alt=""  className="w-full h-full"/>
-            <p className=" absolute top-140 right-20 bg-white text-[10px] p-1 rounded-[5px]">{game.platform}</p>
-           <Button type="primary" className=" absolute! top-150! right-20! text-xl! w-25! h-10!">$ {game.price}</Button>
+            <img src={game.imgbg} alt="" className="w-full h-full" />
+            <p className=" absolute top-140 right-20 bg-white text-[10px] p-1 rounded-[5px]">
+              {game.platform}
+            </p>
+            <Button className=" absolute! top-150! right-20!  w-40! h-10! rounded-4xl!">
+              $ {game.price}
+            </Button>
+            <Button className=" absolute! top-162! right-20!  w-40! h-10! rounded-4xl! bg-white/0! text-white!">
+              Add to Cart
+            </Button>
+            <div className="w-120 h-70 bg-black/20 backdrop-blur-md absolute top-100 left-20 rounded-3xl border border-white">
+              <p>{game.name}</p>
+              <p>{game.title}</p>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
-      <div>
-        
-      </div>
+      <div></div>
     </>
   );
 };
