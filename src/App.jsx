@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
 import Layout from "./lib/components/layouts/Layout"
 import Home from "./lib/components/layouts/Home"
+import Games from "./lib/components/Games"
 
 
 const App = () => {
@@ -12,7 +13,12 @@ const App = () => {
       path:"/",
       index: true,
       element: <Home/>, 
-    }]
+    },
+  {
+    path:"/games",
+    element:<Games/>
+  }
+  ]
 
     }
 

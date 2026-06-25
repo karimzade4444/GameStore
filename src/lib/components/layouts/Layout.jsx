@@ -19,7 +19,7 @@ const Layout = () => {
           <Link to="/" className="hover:text-white">
             Home
           </Link>
-          <Link to="/" className="hover:text-white">
+          <Link to="/games" className="hover:text-white">
             Games
           </Link>
           <Link to="/" className="hover:text-white">
