@@ -1,9 +1,11 @@
 import { Link, Outlet } from "react-router";
 import logo from "../../../assets/magmus.png";
-import { FacebookOutlined, GithubOutlined, InstagramFilled, InstagramOutlined, ShoppingTwoTone, WhatsAppOutlined, YoutubeOutlined } from "@ant-design/icons";
+import { FacebookOutlined, GithubOutlined,  InstagramOutlined, ShoppingTwoTone, WhatsAppOutlined, YoutubeOutlined } from "@ant-design/icons";
 import { Input } from "antd";
+import { useStore } from "../../store/store";
 
 const Layout = () => {
+  const { cart } = useStore()
   return (
     <>
       <div className="w-full h-15 bg-blue-950/90 flex justify-between items-center p-5 border-2 border-black fixed top-0 z-10">
@@ -33,7 +35,10 @@ const Layout = () => {
             alt=""
             className="w-10 rounded-4xl cursor-pointer shadow-[0_10px_30px_black]"
           />
-          <ShoppingTwoTone className="cursor-pointer" />
+          <Link to="/cart" className="relative">
+            <ShoppingTwoTone className="cursor-pointer text-3xl" />
+            <p className="w-7 h-7 bg-red-800 rounded-2xl absolute -top-3 -right-3 text-center">{cart.length}</p>
+          </Link>
           <Input placeholder="Поиск..." className="border-2! border-black! " />
         </div>
       </div>
@@ -72,7 +77,9 @@ const Layout = () => {
           <GithubOutlined className=" text-5xl text-white!" />
         </div>
         <div className="w-full h-0.5 bg-white/60 mt-10"></div>
-        <p className="text-white text-center pt-2 font-extralight">Copyright MagMus.tj 2026, all rights reserved</p>
+        <p className="text-white text-center pt-2 font-extralight">
+          Copyright MagMus.tj 2026, all rights reserved
+        </p>
       </div>
     </>
   );

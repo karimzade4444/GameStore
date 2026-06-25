@@ -3,6 +3,7 @@ import { getGames } from "../api/games";
 import { Button } from "antd";
 import { Link } from "react-router";
 import { Loader2 } from "lucide-react";
+import { useStore } from "../store/store";
 
 
 const Games = () => {
@@ -10,6 +11,7 @@ const Games = () => {
         queryKey: ["games"],
         queryFn: getGames,
       });
+      const {addToCart} = useStore();
   return (
     <div className="p-30">
       <p className="text-white text-4xl">Games</p>
@@ -33,7 +35,7 @@ const Games = () => {
               </div>
               <div className="flex justify-between items-center p-3">
                 <p className="text-blue-400 ">{el.developer}</p>
-                <Button type="primary">Buy ${el.price}</Button>
+                <Button type="primary" onClick={()=>addToCart(el)}>Buy ${el.price}</Button>
               </div>
             </div>
           ))
