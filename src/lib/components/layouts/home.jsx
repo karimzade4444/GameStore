@@ -4,8 +4,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { useStore } from "../../store/store";
-import { useEffect } from "react";
 import { getGames } from "../../api/games";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "antd";
