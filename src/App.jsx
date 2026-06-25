@@ -4,6 +4,7 @@ import Home from "./lib/components/layouts/Home"
 import Games from "./lib/components/Games"
 import About from "./lib/components/About"
 import ProdByID from "./lib/components/prodByID"
+import Cart from "./lib/components/Cart"
 
 
 const App = () => {
@@ -27,6 +28,10 @@ const App = () => {
   {
     path:"/prod/:id",
     element:<ProdByID/>
+  },
+  {
+    path:"/cart",
+    element:<Cart/>
   }
   ]
 
