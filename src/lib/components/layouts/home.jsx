@@ -34,7 +34,11 @@ const Home = () => {
       >
         {games?.map((game) => (
           <SwiperSlide className="relative!">
-            <img src={game.imgbg} alt="" className="w-full h-full" />
+            <img
+              src={game.imgbg}
+              alt=""
+              className="w-full h-full [mask-image:linear-gradient(to_bottom,transparent_0%,black_15%,black_85%,transparent_100%)] [webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_15%,black_85%,transparent_100%)]"
+            />
             <p className=" absolute top-140 right-20 bg-white text-[10px] p-1 rounded-[5px]">
               {game.platform}
             </p>
