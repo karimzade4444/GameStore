@@ -68,7 +68,9 @@ const Cart = () => {
             <p>Total:</p>
             <p>$ {total}</p>
           </div>
-          <Button type="primary">Continue Shopping</Button>
+          <div className=" flex justify-center items-center mt-10">
+            <Button type="primary" className="w-70 h-12! text-2xl! font-bold!">Continue Shopping</Button>
+          </div>
         </div>
       </div>
     </>
