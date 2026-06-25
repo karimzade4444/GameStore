@@ -75,6 +75,7 @@ const Layout = () => {
           <GithubOutlined className=" text-5xl text-white!" />
         </div>
         <div className="w-full h-0.5 bg-white/60 mt-10"></div>
+        <p className="text-white text-center pt-2 font-extralight">Copyright MagMus.tj 2026, all rights reserved</p>
       </div>
     </>
   );
