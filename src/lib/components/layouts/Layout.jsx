@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router";
 import logo from "../../../assets/magmus.png";
-import { ShoppingTwoTone } from "@ant-design/icons";
+import { FacebookOutlined, GithubOutlined, InstagramFilled, InstagramOutlined, ShoppingTwoTone, WhatsAppOutlined, YoutubeOutlined } from "@ant-design/icons";
 import { Input } from "antd";
 
 const Layout = () => {
@@ -41,9 +41,40 @@ const Layout = () => {
         </div>
       </div>
       <Outlet />
-      <div className=" w-full h-40 bg-neutral-300">
-        <img src={logo} alt="" className="w-15" />
-        <div>Помощь</div>
+      <div className=" w-full h-105 bg-blue-950">
+        <div className=" flex justify-center items-start gap-40 p-15">
+          <div className="w-140 flex justify-center items-start flex-col gap-5">
+            <div className=" flex justify-start items-center gap-4">
+              <img src={logo} alt="" className="w-15 rounded-3xl" />
+              <p className="text-white font-black text-2xl">MagMus® Store</p>
+            </div>
+            <p className="text-white/70">
+              MagMus® Store - Where every gamer levels up! From epic AAA
+              adventures to indie gems, grab the hottest deals on PC,
+              Playstation. PLay more, pay less
+            </p>
+          </div>
+          <div className="w-0.5 h-40 bg-white/80"></div>
+          <div className="text-white/70">
+            <p className=" font-black text-2xl pt-3 text-white">My Account</p>
+            <p className="pt-8">My Account</p>
+            <p className="pt-2">My Orders</p>
+          </div>
+          <div className="text-white/70">
+            <p className=" font-black text-2xl pt-3 text-white">Support</p>
+            <p className="pt-8">Terms and conditions</p>
+            <p className="pt-2">Privacy and cookie policy</p>
+            <p className="pt-2">Refund policy</p>
+          </div>
+        </div>
+        <div className=" flex justify-end items-center gap-5 pr-20">
+          <InstagramOutlined className=" text-5xl text-white!" />
+          <FacebookOutlined className=" text-5xl text-white!" />
+          <YoutubeOutlined className=" text-5xl text-white!" />
+          <WhatsAppOutlined className=" text-5xl text-white!" />
+          <GithubOutlined className=" text-5xl text-white!" />
+        </div>
+        <div className="w-full h-0.5 bg-white/60 mt-10"></div>
       </div>
     </>
   );
