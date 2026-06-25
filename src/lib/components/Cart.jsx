@@ -1,18 +1,11 @@
 import { useStore } from "../store/store"
-import { useQuery } from "@tanstack/react-query";
-import { getGames } from "../api/games";
-import { Button } from "antd";
-import { Link } from "react-router";
-import { Loader2 } from "lucide-react";
+import { DeleteOutlined } from "@ant-design/icons";
 
 
 
 const Cart = () => {
-          const { data: games, isLoading } = useQuery({
-            queryKey: ["games"],
-            queryFn: getGames,
-          });
-  const { cart } = useStore()
+         
+  const { cart, removeFromCart } = useStore()
 
   return (
     <>
@@ -25,21 +18,23 @@ const Cart = () => {
 
       <div className="p-20">
         <div className="w-[60%] bg-linear-to-b from-neutral-800 to-white/20 rounded-2xl">
-          {isLoading ? (
-            <Loader2 className=" animate-spin text-white" />
-          ) : (
-            games?.map((el) => (
+          { cart.map((el) => (
               <div>
                 <div className="p-6 flex  gap-5">
                   <img src={el.img} alt="" className="w-25 h-30 rounded-2xl" />
-                  <div><p className="pt-3">{el.name}</p>
-                  <p className="pt-5 w-150">{el.title}</p></div>
+                  <div>
+                    <p className="pt-3 text-white text-xl">{el.name}</p>
+                    <p className="pt-5 w-140 text-neutral-400">{el.title}</p>
+                  </div>
+                  <div className=" flex justify-between items-end flex-col">
+                    <DeleteOutlined  className="text-white! text-2xl cursor-pointer" onClick={()=>removeFromCart(el.id)}/>
+                    <p className="text-white text-2xl">$ {el.price}</p>
+                  </div>
                 </div>
-                
-                  <div className="w-[95%] h-0.5 bg-white/40 rounded-2xl m-auto"></div>
-                </div>
-              
-            ))
+
+                <div className="w-[95%] h-0.5 bg-white/40 rounded-2xl m-auto"></div>
+              </div>
+            )
           )}
           ,
         </div>
