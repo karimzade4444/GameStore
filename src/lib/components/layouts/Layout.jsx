@@ -1,7 +1,7 @@
 import { Link, Outlet } from "react-router";
 import logo from "../../../assets/magmus.png";
 import { FacebookOutlined, GithubOutlined,  InstagramOutlined, ShoppingTwoTone, WhatsAppOutlined, YoutubeOutlined } from "@ant-design/icons";
-import { Input } from "antd";
+import { Button, Input } from "antd";
 import { useStore } from "../../store/store";
 
 const Layout = () => {
@@ -16,6 +16,7 @@ const Layout = () => {
             className="w-10 rounded-2xl shadow-[0_10px_30px_black]"
           />
           <p className=" text-xl font-medium text-white ">MagMus® Store</p>
+          <Button type="primary" danger className=" font-black!">ADMIN PANEL</Button>
         </div>
         <div className="flex justify-center items-center gap-10 font-light text-white/70 ">
           <Link to="/" className="hover:text-white">
