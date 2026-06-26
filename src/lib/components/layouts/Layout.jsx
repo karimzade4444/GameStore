@@ -16,7 +16,11 @@ const Layout = () => {
             className="w-10 rounded-2xl shadow-[0_10px_30px_black]"
           />
           <p className=" text-xl font-medium text-white ">MagMus® Store</p>
-          <Button type="primary" danger className=" font-black!">ADMIN PANEL</Button>
+          <Link to="/admin">
+            <Button type="primary" danger className=" font-black!">
+              ADMIN PANEL
+            </Button>
+          </Link>
         </div>
         <div className="flex justify-center items-center gap-10 font-light text-white/70 ">
           <Link to="/" className="hover:text-white">
@@ -38,7 +42,9 @@ const Layout = () => {
           />
           <Link to="/cart" className="relative">
             <ShoppingTwoTone className="cursor-pointer text-3xl" />
-            <p className="w-7 h-7 bg-red-800 rounded-2xl absolute -top-3 -right-3 text-center">{cart.length}</p>
+            <p className="w-7 h-7 bg-red-800 rounded-2xl absolute -top-3 -right-3 text-center">
+              {cart.length}
+            </p>
           </Link>
           <Input placeholder="Поиск..." className="border-2! border-black! " />
         </div>
