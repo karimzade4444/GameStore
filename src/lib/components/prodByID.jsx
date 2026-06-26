@@ -6,10 +6,12 @@ import { useState } from "react";
 import ReactPlayer from "react-player";
 import { Button } from "antd";
 import gen from "../../assets/gen.png"
+import { useStore } from "../store/store";
+
 
 const ProdByID = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-
+const {addToCart} = useStore();
   const { id } = useParams();
 
   const { data: game, isLoading } = useQuery({
@@ -38,7 +40,7 @@ const ProdByID = () => {
           <p className="h-40 pt-2">{game.title}</p>
           <div className="w-full h-0.5 bg-neutral-400 mt-5"></div>
           <Button className="mt-5! w-60! rounded-2xl!">Buy Now</Button>
-          <Button className="mt-5! w-60! rounded-2xl! bg-blue-950! border-0! text-white!">
+          <Button className="mt-5! w-60! rounded-2xl! bg-blue-950! border-0! text-white!" onClick={()=>addToCart(game)}>
             Add to Cart
           </Button>
         </div>
