@@ -7,8 +7,12 @@ import { Link } from "react-router";
 import APCreatModal from "./APCreatModal";
 import TableAP from "./TableAP";
 import { useState } from "react";
+import APEditModal from "./APEditModal";
 
 const AdminPanel = () => {
+  const [editModal, setEditModal] = useState(false);
+
+  const [editGame, setEditGame] = useState(null);
   const [createModal, setCreateModal] = useState(false);
   const { data: games, isLoading } = useQuery({
     queryKey: ["games"],
@@ -57,18 +61,27 @@ const AdminPanel = () => {
                 variant="underlined"
                 className="bg-white/0! text-white! placeholder:text-white/70!"
               />
-              <Button className=" bg-linear-to-r! from-blue-700/70 via-purple-600/70 to-rose-500/70! text-white! font-bold! " onClick={()=>setCreateModal(true)}>
+              <Button
+                className=" bg-linear-to-r! from-blue-700/70 via-purple-600/70 to-rose-500/70! text-white! font-bold! "
+                onClick={() => setCreateModal(true)}
+              >
                 + ADD NEW GAMES
               </Button>
             </div>
           </div>
 
           <div className="w-full overflow-x-auto bg-black p-6 rounded-xl mt-10">
-            <TableAP/>
+            <TableAP setEditModal={setEditModal} setEditGame={setEditGame} />
           </div>
         </div>
       </div>
-      <APCreatModal  createModal={createModal} setCreateModal={setCreateModal}/>
+      <APCreatModal createModal={createModal} setCreateModal={setCreateModal} />
+      <APEditModal
+        editModal={editModal}
+        setEditModal={setEditModal}
+        editGame={editGame}
+        setEditGame={setEditGame}
+      />
     </>
   );
 };
