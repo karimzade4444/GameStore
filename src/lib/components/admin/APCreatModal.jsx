@@ -22,15 +22,15 @@ const APCreatModal = () => {
 
      const price = useStore((state) => state.price);
      const logo = useStore((state) => state.logo);
-     const name = useStore((state) => state.name);
-     const name = useStore((state) => state.name);
-     const name = useStore((state) => state.name);
-     const name = useStore((state) => state.name);
-     const name = useStore((state) => state.name);
-     const name = useStore((state) => state.name);
-     const name = useStore((state) => state.name);
-     const name = useStore((state) => state.name);
-     const name = useStore((state) => state.name);
+     const trailer = useStore((state) => state.trailer);
+     const imgbg = useStore((state) => state.imgbg);
+     const developer = useStore((state) => state.developer);
+     const release = useStore((state) => state.release);
+     const tags = useStore((state) => state.tags);
+     const storage = useStore((state) => state.storage);
+     const language = useStore((state) => state.language);
+     const platform = useStore((state) => state.platform);
+     const title = useStore((state) => state.title);
 
 
 
@@ -44,8 +44,18 @@ const APCreatModal = () => {
         onOk={() => {
           mutate({
             name,
-            title,
-            category,
+            img,
+            price,
+            logo,
+            trailer,
+            imgbg,
+            developer,
+            release,
+            tags,
+            storage,
+            language,
+            platform,
+            title
           });
         }}
         confirmLoading={isPending}
