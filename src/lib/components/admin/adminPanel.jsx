@@ -12,7 +12,6 @@ import APEditModal from "./APEditModal";
 const AdminPanel = () => {
   const [editModal, setEditModal] = useState(false);
 
-  const [editGame, setEditGame] = useState(null);
   const [createModal, setCreateModal] = useState(false);
   const { data: games, isLoading } = useQuery({
     queryKey: ["games"],
@@ -71,7 +70,7 @@ const AdminPanel = () => {
           </div>
 
           <div className="w-full overflow-x-auto bg-black p-6 rounded-xl mt-10">
-            <TableAP setEditModal={setEditModal} setEditGame={setEditGame} />
+            <TableAP setEditModal={setEditModal}  />
           </div>
         </div>
       </div>
@@ -79,8 +78,7 @@ const AdminPanel = () => {
       <APEditModal
         editModal={editModal}
         setEditModal={setEditModal}
-        editGame={editGame}
-        setEditGame={setEditGame}
+        
       />
     </>
   );

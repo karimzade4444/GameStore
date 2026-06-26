@@ -1,19 +1,20 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { deleteGames, getGames } from "../../api/games";
+import { useStore } from "../../store/store";
 
-
-const TableAP = ({setEditGame, setEditModal}) => {
-      const { data: games, isLoading } = useQuery({
-        queryKey: ["games"],
-        queryFn: getGames,
-      });
-      const queryClient = useQueryClient();
-      const { mutate: deletingGames } = useMutation({
-        mutationFn: deleteGames,
-        onSuccess: () => {
-          queryClient.invalidateQueries({ queryKey: ["games"] });
-        },
-      });
+const TableAP = ({ setEditModal }) => {
+  const setEditGame = useStore((state) => state.setEditGame);
+  const { data: games, isLoading } = useQuery({
+    queryKey: ["games"],
+    queryFn: getGames,
+  });
+  const queryClient = useQueryClient();
+  const { mutate: deletingGames } = useMutation({
+    mutationFn: deleteGames,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["games"] });
+    },
+  });
   return (
     <>
       <table
@@ -110,6 +111,6 @@ const TableAP = ({setEditGame, setEditModal}) => {
       </table>
     </>
   );
-}
+};
 
-export default TableAP
+export default TableAP;

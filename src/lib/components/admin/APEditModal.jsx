@@ -1,30 +1,49 @@
+import { useEffect, useState } from "react";
+import { Modal, Input, DatePicker, Select } from "antd";
+import dayjs from "dayjs";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+
 import { useStore } from "../../store/store";
+import { updateGames } from "../../api/games";
+
+const APEditModal = ({ editModal, setEditModal }) => {
+
+  const setEditGame = useStore((state) => state.setEditGame);
+
+  const queryClient = useQueryClient();
+
+  const editGame = useStore((state) => state.editGame);
+
+  const [game, setGame] = useState(editGame);
 
 
-const APEditModal = () => {
+  const { mutate, isPending } = useMutation({
+    mutationFn: updateGames,
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["games"],
+      });
 
+      setEditModal(false);
+    },
+  });
+
+  useEffect(() => {
+    if (editGame) {
+      setGame(editGame);
+    }
+  }, [editGame]);
   return (
     <>
       <Modal
         title="Добавить новую Игру"
         closable={{ "aria-label": "Custom Close Button" }}
-        open={createModal}
-        onCancel={() => setCreateModal(false)}
+        open={editModal}
+        onCancel={() => setEditModal(false)}
         onOk={() => {
           mutate({
-            name,
-            img,
-            price,
-            logo,
-            trailer,
-            imgbg,
-            developer,
-            release,
-            tags,
-            storage,
-            language,
-            platform,
-            title,
+            id: game.id,
+            data: game,
           });
         }}
         confirmLoading={isPending}
@@ -36,9 +55,12 @@ const APEditModal = () => {
             <Input
               placeholder="Введите название игры..."
               variant="underlined"
-              value={name}
+              value={game.name}
               onChange={(e) => {
-                setName(e.target.value);
+                setGame({
+                  ...game,
+                  name: e.target.value,
+                });
               }}
             />
           </div>
@@ -47,9 +69,12 @@ const APEditModal = () => {
             <Input
               placeholder="https://..."
               variant="underlined"
-              value={img}
+              value={game.img}
               onChange={(e) => {
-                setImg(e.target.value);
+                setGame({
+                  ...game,
+                  img: e.target.value,
+                });
               }}
             />
           </div>
@@ -58,9 +83,12 @@ const APEditModal = () => {
             <Input
               placeholder="Введите цену..."
               variant="underlined"
-              value={price}
+              value={game.price}
               onChange={(e) => {
-                setPrice(e.target.value);
+                setGame({
+                  ...game,
+                  price: e.target.value,
+                });
               }}
             />
           </div>
@@ -69,9 +97,12 @@ const APEditModal = () => {
             <Input
               placeholder="https://..."
               variant="underlined"
-              value={logo}
+              value={game.logo}
               onChange={(e) => {
-                setLogo(e.target.value);
+                setGame({
+                  ...game,
+                  logo: e.target.value,
+                });
               }}
             />
           </div>
@@ -80,9 +111,12 @@ const APEditModal = () => {
             <Input
               placeholder="https://..."
               variant="underlined"
-              value={trailer}
+              value={game.trailer}
               onChange={(e) => {
-                setTrailer(e.target.value);
+                setGame({
+                  ...game,
+                  trailer: e.target.value,
+                });
               }}
             />
           </div>
@@ -91,9 +125,12 @@ const APEditModal = () => {
             <Input
               placeholder="https://..."
               variant="underlined"
-              value={imgbg}
+              value={game.imgbg}
               onChange={(e) => {
-                setImgbg(e.target.value);
+                setGame({
+                  ...game,
+                  imgbg: e.target.value,
+                });
               }}
             />
           </div>
@@ -102,27 +139,31 @@ const APEditModal = () => {
             <Input
               placeholder="Введите разрабочик игры..."
               variant="underlined"
-              value={developer}
+              value={game.developer}
               onChange={(e) => {
-                setDeveloper(e.target.value);
+                setGame({
+                  ...game,
+                  developer: e.target.value,
+                });
               }}
             />
           </div>
           <div>
             <p className=" font-bold">Дата релиза</p>
             <DatePicker
-              className="w-full!"
-              value={release ? dayjs(release, "YYYY-MM-DD") : null}
+              value={game.release ? dayjs(game.release, "YYYY-MM-DD") : null}
               onChange={(date, dateString) => {
-                setRelease(dateString);
+                setGame({
+                  ...game,
+                  release: dateString,
+                });
               }}
             />
           </div>
           <div>
             <p className=" font-bold">Жанр</p>
             <Select
-              defaultValue={tags}
-              style={{ width: 120 }}
+              value={game.tags}
               options={[
                 { value: "Action", label: "Action" },
                 { value: "Adventure", label: "Adventure" },
@@ -130,11 +171,12 @@ const APEditModal = () => {
                 { value: "Fighting", label: "Fighting" },
                 { value: "RPG", label: "RPG" },
                 { value: "Single", label: "Single" },
-                { value: "disabled", label: "Disabled", disabled: true },
               ]}
-              className="w-full!"
               onChange={(value) => {
-                setTags(value);
+                setGame({
+                  ...game,
+                  tags: value,
+                });
               }}
             />
           </div>
@@ -143,9 +185,12 @@ const APEditModal = () => {
             <Input
               placeholder="Память игры..."
               variant="underlined"
-              value={storage}
+              value={game.storage}
               onChange={(e) => {
-                setStorage(e.target.value);
+                setGame({
+                  ...game,
+                  storage: e.target.value,
+                });
               }}
             />
           </div>
@@ -154,9 +199,12 @@ const APEditModal = () => {
             <Input
               placeholder="Язык игры..."
               variant="underlined"
-              value={language}
+              value={game.language}
               onChange={(e) => {
-                setLanguage(e.target.value);
+                setGame({
+                  ...game,
+                  language: e.target.value,
+                });
               }}
             />
           </div>
@@ -165,9 +213,12 @@ const APEditModal = () => {
             <Input
               placeholder="Введите доступные платформы..."
               variant="underlined"
-              value={platform}
+              value={game.platform}
               onChange={(e) => {
-                setPlatform(e.target.value);
+                setGame({
+                  ...game,
+                  platform: e.target.value,
+                });
               }}
             />
           </div>
@@ -177,9 +228,12 @@ const APEditModal = () => {
               placeholder="Введите описание игры..."
               variant="underlined"
               className="w-238!"
-              value={title}
+              value={game.title}
               onChange={(e) => {
-                setTitle(e.target.value);
+                setGame({
+                  ...game,
+                  title: e.target.value,
+                });
               }}
             />
           </div>
@@ -187,6 +241,6 @@ const APEditModal = () => {
       </Modal>
     </>
   );
-}
+};
 
-export default APEditModal
+export default APEditModal;

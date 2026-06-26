@@ -19,7 +19,21 @@ export const useStore = create(
       language: "",
       platform: "",
       title: "",
-      editGame: null,
+      editGame: {
+        name: "",
+        img: "",
+        price: "",
+        logo: "",
+        trailer: "",
+        imgbg: "",
+        developer: "",
+        release: "",
+        tags: "",
+        storage: "",
+        language: "",
+        platform: "",
+        title: "",
+      },
 
       setEditGame: (game) =>
         set({
