@@ -19,6 +19,12 @@ export const useStore = create(
       language: "",
       platform: "",
       title: "",
+      editGame: null,
+
+      setEditGame: (game) =>
+        set({
+          editGame: game,
+        }),
 
       setGames: (games) => set({ games }),
 
