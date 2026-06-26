@@ -2,7 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { deleteGames, getGames } from "../../api/games";
 
 
-const TableAP = () => {
+const TableAP = ({setEditGame, setEditModal}) => {
       const { data: games, isLoading } = useQuery({
         queryKey: ["games"],
         queryFn: getGames,
@@ -88,6 +88,10 @@ const TableAP = () => {
                   <button
                     className="p-2 text-slate-400 hover:text-blue-400 bg-slate-900/50 hover:bg-slate-800 rounded-lg border border-slate-700/50 transition-all cursor-pointer"
                     title="Редактировать"
+                    onClick={() => {
+                      setEditGame(game);
+                      setEditModal(true);
+                    }}
                   >
                     ✏️
                   </button>
