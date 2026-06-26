@@ -63,6 +63,8 @@ const APCreatModal = ({ createModal, setCreateModal }) => {
             <Input
               placeholder="Введите название игры..."
               variant="underlined"
+              value={name}
+              onChange={(e)=>}
             />
           </div>
           <div>
@@ -99,44 +101,47 @@ const APCreatModal = ({ createModal, setCreateModal }) => {
           <div>
             <p className=" font-bold">Жанр</p>
             <Select
-              defaultValue="lucy"
+              defaultValue="Disabled"
               style={{ width: 120 }}
               options={[
                 { value: "Action", label: "Action" },
                 { value: "Adventure", label: "Adventure" },
-                { value: "Yiminghe", label: "yiminghe" },
+                { value: "FPS", label: "FPS" },
+                { value: "Fighting", label: "Fighting" },
+                { value: "RPG", label: "RPG" },
+                { value: "Single", label: "Single" },
                 { value: "disabled", label: "Disabled", disabled: true },
-                
               ]}
               className="w-full!"
             />
           </div>
           <div>
-            <p className=" font-bold">Название</p>
+            <p className=" font-bold">Память</p>
             <Input
-              placeholder="Введите название игры..."
+              placeholder="Память игры..."
               variant="underlined"
             />
           </div>
           <div>
-            <p className=" font-bold">Название</p>
+            <p className=" font-bold">Язык игры</p>
             <Input
-              placeholder="Введите название игры..."
+              placeholder="Язык игры..."
               variant="underlined"
             />
           </div>
           <div>
-            <p className=" font-bold">Название</p>
+            <p className=" font-bold">Платформы</p>
             <Input
-              placeholder="Введите название игры..."
+              placeholder="Введите доступные платформы..."
               variant="underlined"
             />
           </div>
-          <div className=" col-start-2">
-            <p className=" font-bold">Название</p>
+          <div className="w-full">
+            <p className=" font-bold">Описание</p>
             <Input
-              placeholder="Введите название игры..."
+              placeholder="Введите описание игры..."
               variant="underlined"
+              className="w-238!"
             />
           </div>
         </div>
