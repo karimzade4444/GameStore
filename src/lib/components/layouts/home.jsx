@@ -42,22 +42,25 @@ const Home = () => {
                 alt=""
                 className="w-full h-full mask-[linear-gradient(to_bottom,transparent_0%,black_15%,black_85%,transparent_100%)] [webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_15%,black_85%,transparent_100%)] cursor-pointer"
               />
-              <p className=" absolute top-140 right-20 bg-white text-[10px] p-1 rounded-[5px]">
-                {game.platform}
-              </p>
-              <Button className=" absolute! top-150! right-20!  w-40! h-10! rounded-4xl!">
-                $ {game.price}
-              </Button>
-              <Button className=" absolute! top-162! right-20!  w-40! h-10! rounded-4xl! bg-white/0! text-white!" onClick={()=>addToCart(game)}>
-                Add to Cart
-              </Button>
-              <div className="w-120 h-60 bg-black/20 backdrop-blur-md absolute top-100 left-20 rounded-3xl border border-white">
-                <div className=" flex justify-center items-center bg-blue-950/80 w-full h-12 rounded-3xl">
-                  <p className="text-3xl text-white font-black">{game.name}</p>
-                </div>
-                <p className="p-5 text-xl text-white">{game.title}</p>
-              </div>
             </Link>
+            <p className=" absolute top-140 right-20 bg-white text-[10px] p-1 rounded-[5px]">
+              {game.platform}
+            </p>
+            <Button className=" absolute! top-150! right-20!  w-40! h-10! rounded-4xl!">
+              $ {game.price}
+            </Button>
+            <Button
+              className=" absolute! top-162! right-20!  w-40! h-10! rounded-4xl! bg-white/0! text-white!"
+              onClick={() => addToCart(game)}
+            >
+              Add to Cart
+            </Button>
+            <div className="w-120 h-60 bg-black/20 backdrop-blur-md absolute top-100 left-20 rounded-3xl border border-white">
+              <div className=" flex justify-center items-center bg-blue-950/80 w-full h-12 rounded-3xl">
+                <p className="text-3xl text-white font-black">{game.name}</p>
+              </div>
+              <p className="p-5 text-xl text-white">{game.title}</p>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
