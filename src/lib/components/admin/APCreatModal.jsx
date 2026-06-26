@@ -5,8 +5,8 @@ import { createGames } from "../../api/games";
 import { useStore } from "../../store/store";
 
 
-const APCreatModal = () => {
-    const [createModal, setCreateModal] = useState(false);
+const APCreatModal = ({createModal, setCreateModal}) => {
+    
     const queryClient = useQueryClient();
 
      const { mutate, isPending } = useMutation({

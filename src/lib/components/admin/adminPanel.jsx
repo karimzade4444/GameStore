@@ -6,8 +6,10 @@ import { deleteGames, getGames } from "../../api/games";
 import { Link } from "react-router";
 import APCreatModal from "./APCreatModal";
 import TableAP from "./TableAP";
+import { useState } from "react";
 
 const AdminPanel = () => {
+  const [createModal, setCreateModal] = useState(false);
   const { data: games, isLoading } = useQuery({
     queryKey: ["games"],
     queryFn: getGames,
@@ -55,7 +57,7 @@ const AdminPanel = () => {
                 variant="underlined"
                 className="bg-white/0! text-white! placeholder:text-white/70!"
               />
-              <Button className=" bg-linear-to-r! from-blue-700/70 via-purple-600/70 to-rose-500/70! text-white! font-bold! ">
+              <Button className=" bg-linear-to-r! from-blue-700/70 via-purple-600/70 to-rose-500/70! text-white! font-bold! " onClick={()=>setCreateModal(true)}>
                 + ADD NEW GAMES
               </Button>
             </div>
@@ -66,7 +68,7 @@ const AdminPanel = () => {
           </div>
         </div>
       </div>
-      <APCreatModal />
+      <APCreatModal  createModal={createModal} setCreateModal={setCreateModal}/>
     </>
   );
 };
