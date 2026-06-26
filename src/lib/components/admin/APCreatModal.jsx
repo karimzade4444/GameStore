@@ -77,44 +77,91 @@ const APCreatModal = ({ createModal, setCreateModal }) => {
               placeholder="Введите название игры..."
               variant="underlined"
               value={name}
-              onChange={(e)=>}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
             />
           </div>
           <div>
             <p className=" font-bold">Изоброжение</p>
-            <Input placeholder="https://..." variant="underlined" />
+            <Input
+              placeholder="https://..."
+              variant="underlined"
+              value={img}
+              onChange={(e) => {
+                setImg(e.target.value);
+              }}
+            />
           </div>
           <div>
             <p className=" font-bold">Цена</p>
-            <Input placeholder="Введите цену..." variant="underlined" />
+            <Input
+              placeholder="Введите цену..."
+              variant="underlined"
+              value={price}
+              onChange={(e) => {
+                setPrice(e.target.value);
+              }}
+            />
           </div>
           <div>
             <p className=" font-bold">Доп.Картинка</p>
-            <Input placeholder="https://..." variant="underlined" />
+            <Input
+              placeholder="https://..."
+              variant="underlined"
+              value={logo}
+              onChange={(e) => {
+                setLogo(e.target.value);
+              }}
+            />
           </div>
           <div>
             <p className=" font-bold">Трейлер</p>
-            <Input placeholder="https://..." variant="underlined" />
+            <Input
+              placeholder="https://..."
+              variant="underlined"
+              value={trailer}
+              onChange={(e) => {
+                setTrailer(e.target.value);
+              }}
+            />
           </div>
           <div>
             <p className=" font-bold">Изображение для главной страницы</p>
-            <Input placeholder="https://..." variant="underlined" />
+            <Input
+              placeholder="https://..."
+              variant="underlined"
+              value={imgbg}
+              onChange={(e) => {
+                setImgbg(e.target.value);
+              }}
+            />
           </div>
           <div>
             <p className=" font-bold">Разработчик</p>
             <Input
               placeholder="Введите разрабочик игры..."
               variant="underlined"
+              value={developer}
+              onChange={(e) => {
+                setDeveloper(e.target.value);
+              }}
             />
           </div>
           <div>
             <p className=" font-bold">Дата релиза</p>
-            <DatePicker className="w-full!" />
+            <DatePicker
+              className="w-full!"
+              value={release}
+              onChange={(e) => {
+                setRelease(e.target.value);
+              }}
+            />
           </div>
           <div>
             <p className=" font-bold">Жанр</p>
             <Select
-              defaultValue="Disabled"
+              defaultValue={tags}
               style={{ width: 120 }}
               options={[
                 { value: "Action", label: "Action" },
@@ -126,6 +173,9 @@ const APCreatModal = ({ createModal, setCreateModal }) => {
                 { value: "disabled", label: "Disabled", disabled: true },
               ]}
               className="w-full!"
+              onChange={(e) => {
+                setTags(e.target.value);
+              }}
             />
           </div>
           <div>
@@ -133,6 +183,10 @@ const APCreatModal = ({ createModal, setCreateModal }) => {
             <Input
               placeholder="Память игры..."
               variant="underlined"
+              value={storage}
+              onChange={(e) => {
+                setStorage(e.target.value);
+              }}
             />
           </div>
           <div>
@@ -140,6 +194,10 @@ const APCreatModal = ({ createModal, setCreateModal }) => {
             <Input
               placeholder="Язык игры..."
               variant="underlined"
+              value={language}
+              onChange={(e) => {
+                setLanguage(e.target.value);
+              }}
             />
           </div>
           <div>
@@ -147,6 +205,10 @@ const APCreatModal = ({ createModal, setCreateModal }) => {
             <Input
               placeholder="Введите доступные платформы..."
               variant="underlined"
+              value={platform}
+              onChange={(e) => {
+                setPlatform(e.target.value);
+              }}
             />
           </div>
           <div className="w-full">
@@ -155,6 +217,10 @@ const APCreatModal = ({ createModal, setCreateModal }) => {
               placeholder="Введите описание игры..."
               variant="underlined"
               className="w-238!"
+              value={title}
+              onChange={(e) => {
+                setTitle(e.target.value);
+              }}
             />
           </div>
         </div>
