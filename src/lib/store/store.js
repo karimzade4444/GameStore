@@ -6,6 +6,19 @@ export const useStore = create(
     (set) => ({
       games: [],
       cart: [],
+      name: "",
+      img: "",
+      price: "",
+      logo: "",
+      trailer: "",
+      imgbg: "",
+      developer: "",
+      release: "",
+      tags: "",
+      storage: "",
+      language: "",
+      platform: "",
+      title: "",
 
       setGames: (games) => set({ games }),
 
@@ -19,6 +32,58 @@ export const useStore = create(
             cart: [...state.cart, game],
           };
         }),
+      setName: (newName) =>
+        set(() => ({
+          name: newName,
+        })),
+      setImg: (newImg) =>
+        set(() => ({
+          name: newImg,
+        })),
+      setPrice: (newPrice) =>
+        set(() => ({
+          name: newPrice,
+        })),
+      setLogo: (newLogo) =>
+        set(() => ({
+          name: newLogo,
+        })),
+      setTrailer: (newTrailer) =>
+        set(() => ({
+          name: newTrailer,
+        })),
+      setImgbg: (newImgbg) =>
+        set(() => ({
+          name: newImgbg,
+        })),
+      setDeveloper: (newDeveloper) =>
+        set(() => ({
+          name: newDeveloper,
+        })),
+      setRelease: (newRelease) =>
+        set(() => ({
+          name: newRelease,
+        })),
+      setTags: (newTags) =>
+        set(() => ({
+          name: newTags,
+        })),
+      setStorage: (newStorage) =>
+        set(() => ({
+          name: newStorage,
+        })),
+      setLanguage: (newLanguage) =>
+        set(() => ({
+          name: newLanguage,
+        })),
+      setPlatform: (newPlatform) =>
+        set(() => ({
+          name: newPlatform,
+        })),
+      setTitle: (newTitle) =>
+        set(() => ({
+          name: newTitle,
+        })),
 
       removeFromCart: (id) =>
         set((state) => ({
@@ -26,7 +91,7 @@ export const useStore = create(
         })),
     }),
     {
-      name: "magmus-cart", 
+      name: "magmus-cart",
     },
   ),
 );
