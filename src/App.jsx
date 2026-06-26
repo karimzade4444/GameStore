@@ -5,6 +5,7 @@ import Games from "./lib/components/Games"
 import About from "./lib/components/About"
 import ProdByID from "./lib/components/prodByID"
 import Cart from "./lib/components/Cart"
+import AdminPanel from "./lib/components/admin/adminPanel"
 
 
 const App = () => {
@@ -35,6 +36,10 @@ const App = () => {
   }
   ]
 
+    },
+    {
+      path:"/admin",
+      element:<AdminPanel/>
     }
 
 
