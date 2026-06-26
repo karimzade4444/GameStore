@@ -48,19 +48,18 @@ const AdminPanel = () => {
             className="w-full text-left border-separate"
             style={{ borderSpacing: "0 10px" }}
           >
-            {/* ЗАГЛОВКИ ТАБЛИЦЫ */}
             <thead>
               <tr className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                 <th className="pb-2 pl-4 w-12"></th>
                 <th className="pb-2 w-16">Постер</th>
-                <th className="pb-2">Название игры</th>
-                <th className="pb-2">Жанр</th>
-                <th className="pb-2">Разработчик</th>
-                <th className="pb-2">Платформы</th>
-                <th className="pb-2">Языки</th>
-                <th className="pb-2">Память</th>
-                <th className="pb-2">Релиз</th>
-                <th className="pb-2">Цена</th>
+                <th className="pb-2 text-center">Название игры</th>
+                <th className="pb-2 text-center">Жанр</th>
+                <th className="pb-2 text-center">Разработчик</th>
+                <th className="pb-2 text-center">Платформы</th>
+                <th className="pb-2 text-center">Языки</th>
+                <th className="pb-2 text-center">Память</th>
+                <th className="pb-2 text-center">Релиз</th>
+                <th className="pb-2 text-center">Цена</th>
                 <th className="pb-2 pr-4 text-right">Действия</th>
               </tr>
             </thead>
@@ -72,57 +71,58 @@ const AdminPanel = () => {
                   key={game.id}
                   className="bg-blue-950/40 hover:bg-blue-900/60 border-slate-800 transition-all duration-200 group cursor-pointer"
                 >
-                  <td className="py-4 pl-4 rounded-l-xl border-y border-l border-slate-800/60 group-hover:border-purple-500/50 transition-all ">
-                    
-                  </td>
+                  <td className="py-4 pl-4 rounded-l-xl border-y border-l border-slate-800/60 group-hover:border-purple-500/50 transition-all "></td>
 
                   <td className="py-4 border-y border-slate-800/60 group-hover:border-purple-500/50 transition-all">
                     <img
-                      src="https://via.placeholder.com/40x56"
+                      src={game.img}
                       alt={game.name}
                       className="w-10 h-14 object-cover rounded-md border border-slate-700"
                     />
                   </td>
 
-                  {/* Название */}
-                  <td className="py-4 font-semibold text-slate-200 group-hover:text-purple-400 border-y border-slate-800/60 group-hover:border-purple-500/50 transition-all">
+                  <td className="py-4 font-semibold text-slate-200 group-hover:text-purple-400 border-y border-slate-800/60 group-hover:border-purple-500/50 transition-all text-center">
                     {game.name}
                   </td>
 
-                  {/* Жанр */}
-                  <td className="py-4 border-y border-slate-800/60 group-hover:border-purple-500/50 transition-all">
+                  <td className="text-center py-4 border-y border-slate-800/60 group-hover:border-purple-500/50 transition-all">
                     <span className="px-2.5 py-1 text-xs font-medium rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                      {game.name}
+                      {game.tags}
                     </span>
                   </td>
 
-                  {/* Рейтинг */}
-                  <td className="py-4 font-medium text-sm text-amber-400 border-y border-slate-800/60 group-hover:border-purple-500/50 transition-all">
-                    ⭐ {game.name}
+                  <td className=" text-center py-4 font-medium text-sm text-green-400 border-y border-slate-800/60 group-hover:border-purple-500/50 transition-all">
+                    {game.developer}
                   </td>
 
-                  {/* Цена */}
-                  <td className="py-4 font-semibold text-slate-300 text-sm border-y border-slate-800/60 group-hover:border-purple-500/50 transition-all">
-                    {game.name}
+                  <td className=" text-center py-4 font-semibold text-slate-300 text-sm border-y border-slate-800/60 group-hover:border-purple-500/50 transition-all">
+                    {game.platform}
                   </td>
 
-                  {/* Платформы */}
-                  <td className="py-4 text-slate-400 text-lg border-y border-slate-800/60 group-hover:border-purple-500/50 transition-all">
-                    <div className="flex gap-1">{game.name}</div>
+                  <td className=" text-center py-4 text-slate-400 text-lg border-y border-slate-800/60 group-hover:border-purple-500/50 transition-all">
+                    <div className="flex gap-1 ">{game.language}</div>
+                  </td>
+                  <td className=" text-center py-4 text-slate-400 text-lg border-y border-slate-800/60 group-hover:border-purple-500/50 transition-all">
+                    <div className="flex gap-1">{game.storage}</div>
+                  </td>
+                  <td className=" text-center py-4 text-slate-400 text-lg border-y border-slate-800/60 group-hover:border-purple-500/50 transition-all">
+                    <div className="flex gap-1">{game.release}</div>
+                  </td>
+                  <td className=" text-center py-4 text-slate-400 text-lg border-y border-slate-800/60 group-hover:border-purple-500/50 transition-all">
+                    <div className="flex gap-1">$ {game.price}</div>
                   </td>
 
-                  {/* Действия (Скругление только справа) */}
                   <td className="py-4 pr-4 text-right rounded-r-xl border-y border-r border-slate-800/60 group-hover:border-purple-500/50 transition-all">
                     <div className="flex items-center justify-end gap-2">
                       <button
-                        onClick={() => console.log("Редактировать", game.id)}
-                        className="p-2 text-slate-400 hover:text-blue-400 bg-slate-900/50 hover:bg-slate-800 rounded-lg border border-slate-700/50 transition-all"
+                        
+                        className="p-2 text-slate-400 hover:text-blue-400 bg-slate-900/50 hover:bg-slate-800 rounded-lg border border-slate-700/50 transition-all cursor-pointer"
                         title="Редактировать"
                       >
                         ✏️
                       </button>
                       <button
-                        className="p-2 text-slate-400 hover:text-red-400 bg-slate-900/50 hover:bg-slate-800 rounded-lg border border-slate-700/50 transition-all"
+                        className="p-2 text-slate-400 hover:text-red-400 bg-slate-900/50 hover:bg-slate-800 rounded-lg border border-slate-700/50 transition-all cursor-pointer"
                         title="Удалить"
                       >
                         🗑️
