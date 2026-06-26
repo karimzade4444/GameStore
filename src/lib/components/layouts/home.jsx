@@ -9,8 +9,10 @@ import { useQuery } from "@tanstack/react-query";
 import { Button } from "antd";
 import Categories from "./categories";
 import { Link } from "react-router";
+import { useStore } from "../../store/store";
 
 const Home = () => {
+  const {addToCart} = useStore();
   const { data: games, isLoading } = useQuery({
     queryKey: ["games"],
     queryFn: getGames,
@@ -46,7 +48,7 @@ const Home = () => {
               <Button className=" absolute! top-150! right-20!  w-40! h-10! rounded-4xl!">
                 $ {game.price}
               </Button>
-              <Button className=" absolute! top-162! right-20!  w-40! h-10! rounded-4xl! bg-white/0! text-white!">
+              <Button className=" absolute! top-162! right-20!  w-40! h-10! rounded-4xl! bg-white/0! text-white!" onClick={()=>addToCart(game)}>
                 Add to Cart
               </Button>
               <div className="w-120 h-60 bg-black/20 backdrop-blur-md absolute top-100 left-20 rounded-3xl border border-white">
