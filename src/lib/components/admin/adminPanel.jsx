@@ -14,7 +14,7 @@ const AdminPanel = () => {
           <p className=" text-2xl font-medium text-white ">MagMus® Store</p>
         </div>
         <div className=" p-10">
-          <div className=" flex justify-start items-center gap-5 border-3 p-2 rounded-xl border-white/50 bg-linear-to-r from-blue-700/50 via-purple-600/50 to-rose-500/50 cursor-pointer hover:bg-neutral-600">
+          <div className=" flex justify-start items-center gap-5 border-3 p-2 rounded-xl border-white/50 bg-linear-to-r from-blue-700/50 via-purple-600/50 to-rose-500/50 cursor-pointer hover:bg-neutral-600 shadow-2xl shadow-white/50">
             <SquareLibrary color="white" size={48} />
             <p className=" text-2xl font-medium text-white">Library</p>
           </div>
