@@ -3,6 +3,7 @@ import { DatePicker, Input, Modal, Select } from "antd";
 import { useState } from "react";
 import { createGames } from "../../api/games";
 import { useStore } from "../../store/store";
+import dayjs from "dayjs";
 
 const APCreatModal = ({ createModal, setCreateModal }) => {
   const queryClient = useQueryClient();
@@ -152,9 +153,9 @@ const APCreatModal = ({ createModal, setCreateModal }) => {
             <p className=" font-bold">Дата релиза</p>
             <DatePicker
               className="w-full!"
-              value={release}
-              onChange={(e) => {
-                setRelease(e.target.value);
+              value={release ? dayjs(release, "YYYY-MM-DD") : null}
+              onChange={(date, dateString) => {
+                setRelease(dateString);
               }}
             />
           </div>
@@ -173,8 +174,8 @@ const APCreatModal = ({ createModal, setCreateModal }) => {
                 { value: "disabled", label: "Disabled", disabled: true },
               ]}
               className="w-full!"
-              onChange={(e) => {
-                setTags(e.target.value);
+              onChange={(value) => {
+                setTags(value);
               }}
             />
           </div>

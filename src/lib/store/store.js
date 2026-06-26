@@ -38,51 +38,51 @@ export const useStore = create(
         })),
       setImg: (newImg) =>
         set(() => ({
-          name: newImg,
+          img: newImg,
         })),
       setPrice: (newPrice) =>
         set(() => ({
-          name: newPrice,
+          price: newPrice,
         })),
       setLogo: (newLogo) =>
         set(() => ({
-          name: newLogo,
+          logo: newLogo,
         })),
       setTrailer: (newTrailer) =>
         set(() => ({
-          name: newTrailer,
+          trailer: newTrailer,
         })),
       setImgbg: (newImgbg) =>
         set(() => ({
-          name: newImgbg,
+          imgbg: newImgbg,
         })),
       setDeveloper: (newDeveloper) =>
         set(() => ({
-          name: newDeveloper,
+          developer: newDeveloper,
         })),
       setRelease: (newRelease) =>
         set(() => ({
-          name: newRelease,
+          release: newRelease,
         })),
       setTags: (newTags) =>
         set(() => ({
-          name: newTags,
+          tags: newTags,
         })),
       setStorage: (newStorage) =>
         set(() => ({
-          name: newStorage,
+          storage: newStorage,
         })),
       setLanguage: (newLanguage) =>
         set(() => ({
-          name: newLanguage,
+          language: newLanguage,
         })),
       setPlatform: (newPlatform) =>
         set(() => ({
-          name: newPlatform,
+          platform: newPlatform,
         })),
       setTitle: (newTitle) =>
         set(() => ({
-          name: newTitle,
+          title: newTitle,
         })),
 
       removeFromCart: (id) =>
