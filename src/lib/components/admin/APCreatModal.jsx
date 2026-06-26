@@ -17,7 +17,6 @@ const APCreatModal = ({ createModal, setCreateModal }) => {
 
   const name = useStore((state) => state.name);
   const img = useStore((state) => state.img);
-
   const price = useStore((state) => state.price);
   const logo = useStore((state) => state.logo);
   const trailer = useStore((state) => state.trailer);
@@ -29,6 +28,20 @@ const APCreatModal = ({ createModal, setCreateModal }) => {
   const language = useStore((state) => state.language);
   const platform = useStore((state) => state.platform);
   const title = useStore((state) => state.title);
+
+  const setName = useStore((state) => state.setName);
+  const setImg = useStore((state) => state.setImg);
+  const setPrice = useStore((state) => state.setPrice);
+  const setLogo = useStore((state) => state.setLogo);
+  const setTrailer = useStore((state) => state.setTrailer);
+  const setImgbg = useStore((state) => state.setImgbg);
+  const setDeveloper = useStore((state) => state.setDeveloper);
+  const setRelease = useStore((state) => state.setRelease);
+  const setTags = useStore((state) => state.setTags);
+  const setStorage = useStore((state) => state.setStorage);
+  const setLanguage = useStore((state) => state.setLanguage);
+  const setPlatform = useStore((state) => state.setPlatform);
+  const setTitle = useStore((state) => state.setTitle);
 
   return (
     <>
