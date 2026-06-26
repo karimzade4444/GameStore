@@ -37,7 +37,7 @@ const {addToCart} = useStore();
         <div className="w-[35%] flex justify-center items-center flex-col">
           <img src={game.logo} alt="" className="w-full h-35 object-cover" />
           <div className="w-full h-0.5 bg-neutral-400 mt-10"></div>
-          <p className="h-40 pt-2">{game.title}</p>
+          <p className="h-40 pt-2 line-clamp-7">{game.title}</p>
           <div className="w-full h-0.5 bg-neutral-400 mt-5"></div>
           <Button className="mt-5! w-60! rounded-2xl!">Buy Now</Button>
           <Button className="mt-5! w-60! rounded-2xl! bg-blue-950! border-0! text-white!" onClick={()=>addToCart(game)}>

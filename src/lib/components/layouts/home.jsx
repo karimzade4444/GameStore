@@ -55,11 +55,13 @@ const Home = () => {
             >
               Add to Cart
             </Button>
-            <div className="w-120 h-60 bg-black/20 backdrop-blur-md absolute top-100 left-20 rounded-3xl border border-white">
+            <div className="w-120 h-60 bg-black/20 backdrop-blur-md absolute top-100 left-20 rounded-3xl border border-white ">
               <div className=" flex justify-center items-center bg-blue-950/80 w-full h-12 rounded-3xl">
                 <p className="text-3xl text-white font-black">{game.name}</p>
               </div>
-              <p className="p-5 text-xl text-white">{game.title}</p>
+              <p className="p-5 font-extralight text-white  line-clamp-5">
+                {game.title}
+              </p>
             </div>
           </SwiperSlide>
         ))}
