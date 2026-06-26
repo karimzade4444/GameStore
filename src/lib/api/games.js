@@ -19,3 +19,6 @@ export const deleteGames = async (id) => {
 export const createGames = async (user) => {
   return await axios.post(api, user);
 };
+export const updateGames = async ({ id, data }) => {
+  return await axios.put(`${api}/${id}`, data);
+};
